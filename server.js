@@ -9,14 +9,17 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, "0.0.0.0", () => {
+    console.log(`Voovle Chat running on port ${PORT}`);
+});
 
 // ==========================================
 // VOOVLE CHAT SETTINGS
 // ==========================================
 
-const ADMIN_PASSWORD = "jijw4890!";
-const CHATTER_PASSWORD = "SPAS2012";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+const CHATTER_PASSWORD = process.env.CHATTER_PASSWORD;
 
 const MAX_IMAGE_SIZE = 5 * 1024 * 1024;
 
