@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Voovle Chat</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="orb orb-three"></div>
+    </div>
+
+    <div class="app">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="brand">
+
+                <div class="brand-symbol">
+                    V
+                </div>
+
+                <div class="brand-text">
+                    <h1>Voovle Chat</h1>
+                    <span>your space, together</span>
+                </div>
+
+            </div>
+
+            <div class="connection">
+
+                <span
+                    class="connection-dot"
+                    id="connectionDot"
+                ></span>
+
+                <span id="connectionText">
+                    Connecting...
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- PEOPLE -->
+            <aside class="people-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="eyebrow">
+                            PEOPLE
+                        </span>
+
+                        <h2>
+                            Who's here
+                        </h2>
+                    </div>
+
+                    <span
+                        class="people-count"
+                        id="peopleCount"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+                <div
+                    class="people-list"
+                    id="peopleList"
+                ></div>
+
+            </aside>
+
+
+            <!-- CHAT -->
+            <section class="chat">
+
+                <header class="chat-header">
+
+                    <div class="chat-title">
+
+                        <div class="pulse-icon">
+                            V
+                        </div>
+
+                        <div>
+                            <h2>
+                                Voovle Chat
+                            </h2>
+
+                            <p>
+                                Everyone is welcome here
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="header-button"
+                        id="settingsButton"
+                        type="button"
+                    >
+                        ⚙
+                    </button>
+
+                </header>
+
+
+                <!-- MESSAGES -->
+                <div
+                    class="messages"
+                    id="messages"
+                >
+
+                    <div
+                        class="welcome"
+                        id="welcomeMessage"
+                    >
+
+                        <div class="welcome-star">
+                            V
+                        </div>
+
+                        <h2>
+                            Welcome to Voovle Chat
+                        </h2>
+
+                        <p>
+                            Start a conversation and connect with everyone.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TYPING -->
+                <div
+                    class="typing"
+                    id="typingIndicator"
+                ></div>
+
+
+                <!-- COMPOSER -->
+                <form
+                    class="composer"
+                    id="messageForm"
+                >
+
+                    <input
+                        type="file"
+                        id="imageInput"
+                        accept="image/png,image/jpeg,image/gif,image/webp"
+                        hidden
+                    >
+
+                    <button
+                        type="button"
+                        class="composer-button"
+                        id="imageButton"
+                        title="Upload image"
+                    >
+                        🖼
+                    </button>
+
+                    <input
+                        id="messageInput"
+                        type="text"
+                        placeholder="Say something..."
+                        autocomplete="off"
+                        maxlength="1000"
+                    >
+
+                    <button
+                        type="submit"
+                        class="send-button"
+                    >
+                        ↗
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- PROFILE / INFO -->
+            <aside class="info-panel">
+
+                <div class="profile-card">
+
+                    <div
+                        class="profile-avatar"
+                        id="myAvatar"
+                    >
+                        ?
+                    </div>
+
+                    <h2 id="myName">
+                        Anonymous
+                    </h2>
+
+                    <span class="profile-status">
+                        ● online
+                    </span>
+
+                    <span
+                        id="roleBadge"
+                        class="role-badge"
+                        style="display:none;"
+                    >
+                        ADMIN
+                    </span>
+
+                </div>
+
+
+                <div class="stats">
+
+                    <div class="stat">
+
+                        <span>
+                            ONLINE
+                        </span>
+
+                        <strong id="onlineNumber">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <span>
+                            ROOM
+                        </span>
+
+                        <strong>
+                            OPEN
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about">
+
+                    <span class="eyebrow">
+                        ABOUT
+                    </span>
+
+                    <p>
+                        Voovle Chat is a small place
+                        for people to talk, hang out
+                        and share ideas.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                    type="button"
+                >
+                    Log out
+                </button>
+
+            </aside>
+
+        </main>
+
+    </div>
+
+
+    <!-- LOGIN -->
+    <div
+        class="login-overlay"
+        id="loginOverlay"
+    >
+
+        <div class="login-card">
+
+            <div class="login-logo">
+                V
+            </div>
+
+            <h2>
+                Enter Voovle
+            </h2>
+
+            <p>
+                Sign in to join the conversation.
+            </p>
+
+            <input
+                id="usernameInput"
+                type="text"
+                maxlength="20"
+                placeholder="Username"
+                autocomplete="username"
+            >
+
+            <input
+                id="passwordInput"
+                type="password"
+                placeholder="Password"
+                autocomplete="current-password"
+            >
+
+            <p
+                id="loginError"
+                class="login-error"
+            ></p>
+
+            <button
+                id="joinButton"
+                type="button"
+            >
+                Enter Voovle
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SETTINGS -->
+    <div
+        class="modal-overlay"
+        id="settingsModal"
+    >
+
+        <div class="settings-card">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="eyebrow">
+                        SETTINGS
+                    </span>
+
+                    <h2>
+                        Voovle Settings
+                    </h2>
+                </div>
+
+                <button
+                    id="closeSettings"
+                    class="close-button"
+                    type="button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="setting-row">
+
+                <div>
+                    <strong>
+                        Account
+                    </strong>
+
+                    <span>
+                        Your current username
+                    </span>
+                </div>
+
+                <b id="settingsUsername">
+                    Anonymous
+                </b>
+
+            </div>
+
+
+            <div class="setting-row">
+
+                <div>
+                    <strong>
+                        Appearance
+                    </strong>
+
+                    <span>
+                        Voovle glass interface
+                    </span>
+                </div>
+
+                <span class="setting-pill">
+                    ACTIVE
+                </span>
+
+            </div>
+
+
+            <div
+                class="admin-settings"
+                id="adminSettings"
+                style="display:none;"
+            >
+
+                <div class="admin-title">
+                    👑 Administrator Controls
+                </div>
+
+                <p>
+                    You have administrator permissions.
+                    Use the controls next to users and messages.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SOCKET.IO -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- APP SCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

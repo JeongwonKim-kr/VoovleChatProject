@@ -1,0 +1,14 @@
+{
+  "name": "voovle-chat",
+  "version": "1.0.0",
+  "description": "Voovle Chat - real-time chat application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "socket.io": "^4.8.1"
+  }
+}
