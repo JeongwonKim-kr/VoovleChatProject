@@ -10,9 +10,7 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, "0.0.0.0", () => {
-    console.log(`Voovle Chat running on port ${PORT}`);
-});
+
 
 // ==========================================
 // VOOVLE CHAT SETTINGS
@@ -627,13 +625,11 @@ app.use((error, req, res, next) => {
         error: error.message || "Upload failed."
     });
 });
-
 // ==========================================
 // START
 // ==========================================
 
-server.listen(PORT, () => {
-
+server.listen(PORT, "0.0.0.0", () => {
     console.log("");
     console.log("================================");
     console.log("        VOOVLE CHAT");
